@@ -1504,11 +1504,18 @@ function draw(world){
   svg.attr('width',gW).attr('height',gH);
   svg.selectAll('*').remove();
 
-  /* 모바일에서 전체 지도가 딱 맞게 보이도록 scale 조정 */
+  /* 모바일에서 전체 지도가 딱 맞게 보이도록 scale 조정
   const baseScale=isMobile?gW/5.0:gW/6.28;
-  /* 모바일에서 지도를 살짝 왼쪽으로 이동해 뉴질랜드가 안 잘리게 */
+  모바일에서 지도를 살짝 왼쪽으로 이동해 뉴질랜드가 안 잘리게
   const translateX=isMobile?gW/2-20:gW/2;
-  gProj=d3.geoNaturalEarth1().scale(baseScale).translate([translateX,gH/2]);
+  gProj=d3.geoNaturalEarth1().scale(baseScale).translate([translateX,gH/2]); */
+  const baseScale=isMobile?gW/6.5:gW/6.8;
+  const translateX=isMobile?gW/2-20:gW/2;
+  const translateY=isMobile?gH/1.65:gH/1.6;
+  gProj=d3.geoMercator()
+  .scale(baseScale)
+  .translate([translateX,translateY])
+  .clipExtent([[0,0],[gW,gH]]);
   gPath=d3.geoPath().projection(gProj);
 
   gZoom=d3.zoom()
