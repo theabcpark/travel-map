@@ -760,7 +760,7 @@ footer{
           'thumb4.jpg'
         ],
         gallery: [                   ← 갤러리 사진 파일명 (개수 제한 없음)
-          '1.jpg','2.jpg','3.jpg'
+          '01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'
         ],
         link: '#korea'               ← 상세 페이지 링크 (없으면 '#')
       },
@@ -790,21 +790,365 @@ footer{
 
    ================================================================ */
 const T = {
-  'United States of America':{
-    flag:'🇺🇸',name:'미국',date:'2023년 7월',recent:202307,
-    memo:'뉴욕 타임스퀘어의 현란한 밤, 그랜드 캐니언의 압도적인 일몰, LA의 황금빛 해변. 광활한 대지 위에 다양한 문화가 공존하는 나라.',
-    folder:'images/usa',
+  'Malaysia':{
+    flag:'🇲🇾',name:'말레이시아',date:'2026년 2월',recent:202602,
+    memo:'동남아의 몰디브 셈포르나에서 시파단 다이빙',
+    folder:'images/malaysia',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg'],
-    link:'#usa'
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#malaysia'
+  },
+  'Tajikistan':{
+    flag:'🇹🇯',name:'타지키스탄',date:'2025년 7월',recent:202507,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/tajikistan',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#tajikistan'
+  },
+  'Kazakhstan':{
+    flag:'🇰🇿',name:'카자흐스탄',date:'2025년 7월',recent:202507,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/kazakhstan',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#kazakhstan'
+  },
+  'Kyrgyzstan':{
+    flag:'🇰🇬',name:'키르기스스탄',date:'2025년 7월',recent:202507,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/kyrgyzstan',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#kyrgyzstan'
+  },
+  'Uzbekistan':{
+    flag:'🇺🇿',name:'우즈베키스탄',date:'2025년 7월 / 2023년 9월',recent:202507,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/uzbekistan',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#uzbekistan'
+  },
+  'Qatar':{
+    flag:'🇶🇦',name:'카타르',date:'2025년 2월',recent:202502,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/qatar',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#qatar'
+  },
+  'Egypt':{
+    flag:'🇪🇬',name:'이집트',date:'2025년 2월',recent:202502,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/egypt',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#egypt'
+  },
+  'India':{
+    flag:'🇮🇳',name:'인도',date:'2024년 9월 / 2011년 1월',recent:202409,
+    memo:'새벽빛 속 타지마할의 신비, 바라나시 갠지스강의 기도 의식. 모든 감각을 깨우는 나라.',
+    folder:'images/india',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#india'
+  },
+  'Hong Kong':{
+    flag:'🇭🇰',name:'홍콩',date:'2024년 9월',recent:202409,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/hongkong',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#hongkong'
+  },
+  'Luxembourg':{
+    flag:'🇱🇺',name:'룩셈부르크',date:'2024년 6월',recent:202406,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/luxembourg',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#luxembourg'
+  },
+  'France':{
+    flag:'🇫🇷',name:'프랑스',date:'2024년 6월 / 2023년 6월',recent:202406,
+    memo:'봄의 파리, 에펠탑 아래에서 마신 와인 한 잔. 루브르 박물관 모나리자 앞의 설렘, 몽마르트르 언덕의 예술가들.',
+    folder:'images/france',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#france'
+  },
+  'Vietnam':{
+    flag:'🇻🇳',name:'베트남',date:'2024년 04월 / 2009년 08월',recent:202404,
+    memo:'하롱베이 석회암 섬들 사이의 새벽 안개, 호이안의 등불 축제. 뜨거운 쌀국수 한 그릇.',
+    folder:'images/vietnam',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#vietnam'
+  },
+  'China':{
+    flag:'🇨🇳',name:'중국',date:'2024년 3월 / 2007년 1월',recent:202403,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/china',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#china'
+  },
+  'Spain':{
+    flag:'🇪🇸',name:'스페인',date:'2024년 2월',recent:202402,
+    memo:'바르셀로나의 사그라다 파밀리아. 스테인드글라스를 통과하는 빛은 꿈결 같았다. 플라멩코의 열정.',
+    folder:'images/spain',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#spain'
+  },
+  'Sri Lanka':{
+    flag:'🇱🇰',name:'스리랑카',date:'2024년 2월',recent:202402,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/srilanka',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#srilanka'
+  },
+  'Taiwan':{
+    flag:'🇹🇼',name:'대만',date:'2023년 9월',recent:202309,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/taiwan',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#taiwan'
+  },
+  'Switzerland':{
+    flag:'🇨🇭',name:'스위스',date:'2023년 6월',recent:202306,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/switzerland',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#switzerland'
+  },
+  'Germany':{
+    flag:'🇩🇪',name:'독일',date:'2023년 6월',recent:202306,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/germany',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#germany'
+  },
+  'Japan':{
+    flag:'🇯🇵',name:'일본',date:'2023년 2월',recent:202302,
+    memo:'교토의 벚꽃 가로수길, 도쿄의 활기찬 밤거리, 하코네에서 바라본 후지산.',
+    folder:'images/japan',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#japan'
+  },
+  'Singapore':{
+    flag:'🇸🇬',name:'싱가포르',date:'2022년 12월 / 2019년 12월',recent:202212,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/singapore',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#singapore'
+  },
+  'Romania':{
+    flag:'🇷🇴',name:'루마니아',date:'2022년 9월',recent:202209,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/romania',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#romania'
+  },
+  'Mongolia':{
+    flag:'🇲🇳',name:'몽골',date:'2022년 8월',recent:202208,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/mongolia',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#mongolia'
+  },
+  'Jordan':{
+    flag:'🇯🇴',name:'요르단',date:'2019년 12월',recent:201912,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/jordan',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#jordan'
+  },
+  'Palestine':{
+    flag:'🇵🇸',name:'팔레스타인',date:'2019년 12월',recent:201912,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/palestine',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#palestine'
+  },
+  'Israel':{
+    flag:'🇮🇱',name:'이스라엘',date:'2019년 12월',recent:201912,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/israel',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#israel'
+  },
+  'Russia':{
+    flag:'🇷🇺',name:'러시아',date:'2019년 4월',recent:201904,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/russia',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#russia'
+  },
+  'Cuba':{
+    flag:'🇨🇺',name:'쿠바',date:'2019년 03월',recent:201903,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/cuba',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#cuba'
+  },
+  'Ecuador':{
+    flag:'🇪🇨',name:'에콰도르',date:'2019년 03월',recent:201903,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/ecuador',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#ecuador'
+  },
+  'Aruba':{
+    flag:'🇦🇼',name:'아루바',date:'2018년 1월',recent:201801,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/aruba',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#aruba'
   },
   'Brazil':{
-    flag:'🇧🇷',name:'브라질',date:'2022년 12월',recent:202212,
+    flag:'🇧🇷',name:'브라질',date:'2018년 1월',recent:201801,
     memo:'리우데자네이루의 카니발 시즌. 코르코바도 언덕 예수상 아래 펼쳐진 도시 전경과 이파네마 해변의 석양.',
     folder:'images/brazil',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['1.jpg','2.jpg','3.jpg','4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
     link:'#brazil'
+  },
+  'Chile':{
+    flag:'🇨🇱',name:'칠레',date:'2018년 1월',recent:201801,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/chile',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#chile'
+  },
+  'Argentina':{
+    flag:'🇦🇷',name:'아르헨티나',date:'2018년 1월',recent:201801,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/argentina',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#argentina'
+  },
+  'Uruguay':{
+    flag:'🇺🇾',name:'우루과이',date:'2018년 1월',recent:201801,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/uruguay',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#uruguay'
+  },
+  'Peru':{
+    flag:'🇵🇪',name:'페루',date:'2018년 1월',recent:201801,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/peru',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#peru'
+  },
+  'Bolivia':{
+    flag:'🇧🇴',name:'볼리비아',date:'2018년 1월',recent:201801,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/bolivia',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#bolivia'
+  },
+  'United States of America':{
+    flag:'🇺🇸',name:'미국',date:'2019년 3월',recent:201903,
+    memo:'뉴욕 타임스퀘어의 현란한 밤, 그랜드 캐니언의 압도적인 일몰, LA의 황금빛 해변. 광활한 대지 위에 다양한 문화가 공존하는 나라.',
+    folder:'images/usa',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#usa'
+  },
+  'Canada':{
+    flag:'🇨🇦',name:'캐나다',date:'2019년 3월',recent:201903,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/canada',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#canada'
+  },
+  'Mexico':{
+    flag:'🇲🇽',name:'멕시코',date:'2018년 1월',recent:201801,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/mexico',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#mexico'
+  },
+ 'Philippines':{
+    flag:'🇵🇭',name:'필리핀',date:'2018년 1월',recent:201801,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/philippines',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#philippines'
+  },
+  'Iceland':{
+    flag:'🇮🇸',name:'아이슬란드',date:'2018년 1월',recent:201801,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/iceland',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#iceland'
+  },
+  'Nepal':{
+    flag:'🇳🇵',name:'네팔',date:'2011년 1월',recent:201101,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/nepal',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#nepal'
+  },
+  'Cambodia':{
+    flag:'🇰🇭',name:'캄보디아',date:'2005년 6월',recent:200506,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/cambodia',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#cambodia'
+  },
+  'Thailand':{
+    flag:'🇹🇭',name:'태국',date:'2005년 6월',recent:200506,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/thailand',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#thailand'
+  },
+  'North Korea':{
+    flag:'🇰🇵',name:'북한',date:'2004년 7월',recent:200407,
+    memo:'여행 메모를 여기에 써주세요.',
+    folder:'images/northkorea',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#northkorea'
+  },
+  'South Korea':{
+    flag:'🇰🇷',name:'대한민국',date:'상시',recent:202400,
+    memo:'경복궁의 단풍, 부산 광안리의 야경, 제주도 한라산. 내가 살아가는 이 아름다운 나라.',
+    folder:'images/korea',
+    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    link:'#korea'
   },
 /*
   'United Kingdom':{
@@ -812,33 +1156,17 @@ const T = {
     memo:'런던의 빅벤과 테이트 모던, 에든버러 성의 안개 낀 아침. 역사가 살아 숨쉬는 거리를 걸으며 마신 잉글리시 브렉퍼스트 티.',
     folder:'images/uk',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['1.jpg','2.jpg','3.jpg','4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
     link:'#uk'
   },
 */
-  'France':{
-    flag:'🇫🇷',name:'프랑스',date:'2023년 4월',recent:202304,
-    memo:'봄의 파리, 에펠탑 아래에서 마신 와인 한 잔. 루브르 박물관 모나리자 앞의 설렘, 몽마르트르 언덕의 예술가들.',
-    folder:'images/france',
-    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg'],
-    link:'#france'
-  },
-  'Spain':{
-    flag:'🇪🇸',name:'스페인',date:'2022년 8월',recent:202208,
-    memo:'바르셀로나의 사그라다 파밀리아. 스테인드글라스를 통과하는 빛은 꿈결 같았다. 플라멩코의 열정.',
-    folder:'images/spain',
-    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['1.jpg','2.jpg','3.jpg','4.jpg'],
-    link:'#spain'
-  },
 /*
   'Italy':{
     flag:'🇮🇹',name:'이탈리아',date:'2021년 6월',recent:202106,
     memo:'로마의 콜로세움, 베네치아 곤돌라, 피렌체 두오모. 모든 모퉁이가 예술이었다.',
     folder:'images/italy',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['1.jpg','2.jpg','3.jpg','4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
     link:'#italy'
   },
 */
@@ -848,7 +1176,7 @@ const T = {
     memo:'카파도키아의 새벽 열기구. 천 개의 기구가 하늘을 수놓던 그 순간. 이스탄불 블루 모스크와 그랜드 바자르.',
     folder:'images/turkey',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['1.jpg','2.jpg','3.jpg','4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
     link:'#turkey'
   },
 */
@@ -858,59 +1186,27 @@ const T = {
     memo:'마라케시 제마 엘프나 광장, 사하라 사막의 별밤. 미로 같은 메디나에서 발견한 민트 티.',
     folder:'images/morocco',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['1.jpg','2.jpg','3.jpg','4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
     link:'#morocco'
   },
 */
-  'India':{
-    flag:'🇮🇳',name:'인도',date:'2020년 2월',recent:202002,
-    memo:'새벽빛 속 타지마할의 신비, 바라나시 갠지스강의 기도 의식. 모든 감각을 깨우는 나라.',
-    folder:'images/india',
-    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['1.jpg','2.jpg','3.jpg','4.jpg'],
-    link:'#india'
-  },
-  'Vietnam':{
-    flag:'🇻🇳',name:'베트남',date:'2019년 12월',recent:201912,
-    memo:'하롱베이 석회암 섬들 사이의 새벽 안개, 호이안의 등불 축제. 뜨거운 쌀국수 한 그릇.',
-    folder:'images/vietnam',
-    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['1.jpg','2.jpg','3.jpg','4.jpg'],
-    link:'#vietnam'
-  },
 /*
   'Indonesia':{
     flag:'🇮🇩',name:'인도네시아',date:'2023년 10월',recent:202310,
     memo:'발리 우붓의 라이스 테라스와 물 위의 사원 탄롯. 인도양으로 떨어지는 황금빛 노을.',
     folder:'images/indonesia',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['1.jpg','2.jpg','3.jpg','4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
     link:'#indonesia'
   },
 */
-  'Japan':{
-    flag:'🇯🇵',name:'일본',date:'2024년 3월',recent:202403,
-    memo:'교토의 벚꽃 가로수길, 도쿄의 활기찬 밤거리, 하코네에서 바라본 후지산.',
-    folder:'images/japan',
-    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['1.jpg','2.jpg','3.jpg','4.jpg','5.jpg','6.jpg'],
-    link:'#japan'
-  },
-  'South Korea':{
-    flag:'🇰🇷',name:'대한민국',date:'상시',recent:202400,
-    memo:'경복궁의 단풍, 부산 광안리의 야경, 제주도 한라산. 내가 살아가는 이 아름다운 나라.',
-    folder:'images/korea',
-    thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['1.jpg','2.jpg','3.jpg','4.jpg'],
-    link:'#korea'
-  },
 /*
   'Australia':{
     flag:'🇦🇺',name:'호주',date:'2021년 1월',recent:202101,
     memo:'시드니 하버브릿지와 오페라 하우스의 야경, 그레이트 배리어 리프의 투명한 바다.',
     folder:'images/australia',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['1.jpg','2.jpg','3.jpg','4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
     link:'#australia'
   },
 */
@@ -920,7 +1216,7 @@ const T = {
     memo:'리스본의 노란 트램, 파두 음악이 흐르는 알파마 골목. 신트라의 동화 같은 궁전들.',
     folder:'images/portugal',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['1.jpg','2.jpg','3.jpg','4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
     link:'#portugal'
   },
 */
@@ -930,306 +1226,10 @@ const T = {
     memo:'산토리니의 새하얀 건물과 파란 돔. 아테네 아크로폴리스에서 마주한 2500년의 역사.',
     folder:'images/greece',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['1.jpg','2.jpg','3.jpg','4.jpg'],
+    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
     link:'#greece'
   },
 */
-  'Canada':{
-  flag:'🇨🇦',name:'캐나다',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/canada',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#canada'
-},
-'Mexico':{
-  flag:'🇲🇽',name:'멕시코',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/mexico',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#mexico'
-},
-'Ecuador':{
-  flag:'🇪🇨',name:'에콰도르',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/ecuador',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#ecuador'
-},
-'Chile':{
-  flag:'🇨🇱',name:'칠레',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/chile',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#chile'
-},
-'Argentina':{
-  flag:'🇦🇷',name:'아르헨티나',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/argentina',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#argentina'
-},
-'Uruguay':{
-  flag:'🇺🇾',name:'우루과이',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/uruguay',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#uruguay'
-},
-'Peru':{
-  flag:'🇵🇪',name:'페루',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/peru',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#peru'
-},
-'Bolivia':{
-  flag:'🇧🇴',name:'볼리비아',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/bolivia',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#bolivia'
-},
-'Egypt':{
-  flag:'🇪🇬',name:'이집트',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/egypt',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#egypt'
-},
-'Jordan':{
-  flag:'🇯🇴',name:'요르단',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/jordan',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#jordan'
-},
-'Palestine':{
-  flag:'🇵🇸',name:'팔레스타인',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/palestine',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#palestine'
-},
-'Israel':{
-  flag:'🇮🇱',name:'이스라엘',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/israel',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#israel'
-},
-'Romania':{
-  flag:'🇷🇴',name:'루마니아',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/romania',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#romania'
-},
-'Germany':{
-  flag:'🇩🇪',name:'독일',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/germany',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#germany'
-},
-'Iceland':{
-  flag:'🇮🇸',name:'아이슬란드',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/iceland',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#iceland'
-},
-'Russia':{
-  flag:'🇷🇺',name:'러시아',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/russia',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#russia'
-},
-'Qatar':{
-  flag:'🇶🇦',name:'카타르',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/qatar',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#qatar'
-},
-'Uzbekistan':{
-  flag:'🇺🇿',name:'우즈베키스탄',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/uzbekistan',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#uzbekistan'
-},
-'Tajikistan':{
-  flag:'🇹🇯',name:'타지키스탄',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/tajikistan',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#tajikistan'
-},
-'Kazakhstan':{
-  flag:'🇰🇿',name:'카자흐스탄',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/kazakhstan',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#kazakhstan'
-},
-'Kyrgyzstan':{
-  flag:'🇰🇬',name:'키르기스스탄',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/kyrgyzstan',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#kyrgyzstan'
-},
-'China':{
-  flag:'🇨🇳',name:'중국',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/china',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#china'
-},
-'Mongolia':{
-  flag:'🇲🇳',name:'몽골',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/mongolia',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#mongolia'
-},
-'Nepal':{
-  flag:'🇳🇵',name:'네팔',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/nepal',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#nepal'
-},
-'Sri Lanka':{
-  flag:'🇱🇰',name:'스리랑카',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/srilanka',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#srilanka'
-},
-'Hong Kong':{
-  flag:'🇭🇰',name:'홍콩',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/hongkong',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#hongkong'
-},
-'Thailand':{
-  flag:'🇹🇭',name:'태국',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/thailand',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#thailand'
-},
-'Cambodia':{
-  flag:'🇰🇭',name:'캄보디아',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/cambodia',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#cambodia'
-},
-'Singapore':{
-  flag:'🇸🇬',name:'싱가포르',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/singapore',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#singapore'
-},
-'Taiwan':{
-  flag:'🇹🇼',name:'대만',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/taiwan',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#taiwan'
-},
-'North Korea':{
-  flag:'🇰🇵',name:'북한',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/northkorea',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#northkorea'
-},
-  'Philippines':{
-  flag:'🇵🇭',name:'필리핀',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/philippines',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#philippines'
-},
-  'Luxembourg':{
-  flag:'🇱🇺',name:'룩셈부르크',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/luxembourg',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#luxembourg'
-},
-'Switzerland':{
-  flag:'🇨🇭',name:'스위스',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/switzerland',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#switzerland'
-},
-  'Aruba':{
-  flag:'🇦🇼',name:'아루바',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/aruba',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#aruba'
-},
-  'Cuba':{
-  flag:'🇨🇺',name:'쿠바',date:'2025년 1월',recent:202501,
-  memo:'여행 메모를 여기에 써주세요.',
-  folder:'images/cuba',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg'],
-  link:'#cuba'
-},
-  'Malaysia':{
-  flag:'🇲🇾',name:'말레이시아',date:'2026년 2월',recent:202602,
-  memo:'동남아의 몰디브 셈포르나에서 시파단 다이빙',
-  folder:'images/malaysia',
-  thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-  gallery:['1.jpg','2.jpg','3.jpg', '4.jpg', '5.jpg', '6.jpg', '7.jpg'],
-  link:'#malaysia'
-},
 };
 
 const VISITED = new Set(Object.keys(T));
