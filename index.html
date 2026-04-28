@@ -763,9 +763,7 @@ footer{
           'thumb3.jpg',
           'thumb4.jpg'
         ],
-        gallery: [                   ← 갤러리 사진 파일명 (개수 제한 없음)
-          '01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'
-        ],
+        gallery: makeGallery(100),
         link: '#korea'               ← 상세 페이지 링크 (없으면 '#')
       },
 
@@ -793,13 +791,20 @@ footer{
         브라질 → Brazil          아르헨티나 → Argentina
 
    ================================================================ */
+
+/* 갤러리 자동 생성: 01.jpg ~ 100.jpg */
+const makeGallery = (count = 100) =>
+  Array.from({ length: count }, (_, i) =>
+    `${String(i + 1).padStart(2, '0')}.jpg`
+  );
+
 const T = {
   'Malaysia':{
     flag:'🇲🇾',name:'말레이시아',date:'2026년 2월',recent:202602,
     memo:'동남아의 몰디브 셈포르나에서 시파단 다이빙',
     folder:'images/malaysia',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#malaysia'
   },
   'Tajikistan':{
@@ -807,7 +812,7 @@ const T = {
     memo:'여행 메모를 여기에 써주세요.',
     folder:'images/tajikistan',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#tajikistan'
   },
   'Kazakhstan':{
@@ -815,7 +820,7 @@ const T = {
     memo:'여행 메모를 여기에 써주세요.',
     folder:'images/kazakhstan',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#kazakhstan'
   },
   'Kyrgyzstan':{
@@ -823,7 +828,7 @@ const T = {
     memo:'여행 메모를 여기에 써주세요.',
     folder:'images/kyrgyzstan',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#kyrgyzstan'
   },
   'Uzbekistan':{
@@ -831,7 +836,7 @@ const T = {
     memo:'여행 메모를 여기에 써주세요.',
     folder:'images/uzbekistan',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#uzbekistan'
   },
   'Qatar':{
@@ -839,7 +844,7 @@ const T = {
     memo:'여행 메모를 여기에 써주세요.',
     folder:'images/qatar',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#qatar'
   },
   'Egypt':{
@@ -847,7 +852,7 @@ const T = {
     memo:'여행 메모를 여기에 써주세요.',
     folder:'images/egypt',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#egypt'
   },
   'India':{
@@ -855,7 +860,7 @@ const T = {
     memo:'새벽빛 속 타지마할의 신비, 바라나시 갠지스강의 기도 의식. 모든 감각을 깨우는 나라.',
     folder:'images/india',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#india'
   },
   'Hong Kong':{
@@ -863,7 +868,7 @@ const T = {
     memo:'여행 메모를 여기에 써주세요.',
     folder:'images/hongkong',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#hongkong'
   },
   'Luxembourg':{
@@ -871,7 +876,7 @@ const T = {
     memo:'여행 메모를 여기에 써주세요.',
     folder:'images/luxembourg',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#luxembourg'
   },
   'France':{
@@ -879,7 +884,7 @@ const T = {
     memo:'봄의 파리, 에펠탑 아래에서 마신 와인 한 잔. 루브르 박물관 모나리자 앞의 설렘, 몽마르트르 언덕의 예술가들.',
     folder:'images/france',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#france'
   },
   'Vietnam':{
@@ -887,7 +892,7 @@ const T = {
     memo:'하롱베이 석회암 섬들 사이의 새벽 안개, 호이안의 등불 축제. 뜨거운 쌀국수 한 그릇.',
     folder:'images/vietnam',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#vietnam'
   },
   'China':{
@@ -895,7 +900,7 @@ const T = {
     memo:'여행 메모를 여기에 써주세요.',
     folder:'images/china',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#china'
   },
   'Spain':{
@@ -903,7 +908,7 @@ const T = {
     memo:'바르셀로나의 사그라다 파밀리아. 스테인드글라스를 통과하는 빛은 꿈결 같았다. 플라멩코의 열정.',
     folder:'images/spain',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#spain'
   },
   'Sri Lanka':{
@@ -911,7 +916,7 @@ const T = {
     memo:'여행 메모를 여기에 써주세요.',
     folder:'images/srilanka',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#srilanka'
   },
   'Taiwan':{
@@ -919,7 +924,7 @@ const T = {
     memo:'여행 메모를 여기에 써주세요.',
     folder:'images/taiwan',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#taiwan'
   },
   'Switzerland':{
@@ -927,7 +932,7 @@ const T = {
     memo:'여행 메모를 여기에 써주세요.',
     folder:'images/switzerland',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#switzerland'
   },
   'Germany':{
@@ -935,7 +940,7 @@ const T = {
     memo:'여행 메모를 여기에 써주세요.',
     folder:'images/germany',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#germany'
   },
   'Japan':{
@@ -943,7 +948,7 @@ const T = {
     memo:'교토의 벚꽃 가로수길, 도쿄의 활기찬 밤거리, 하코네에서 바라본 후지산.',
     folder:'images/japan',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#japan'
   },
   'Singapore':{
@@ -951,7 +956,7 @@ const T = {
     memo:'여행 메모를 여기에 써주세요.',
     folder:'images/singapore',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#singapore'
   },
   'Romania':{
@@ -959,7 +964,7 @@ const T = {
     memo:'여행 메모를 여기에 써주세요.',
     folder:'images/romania',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#romania'
   },
   'Mongolia':{
@@ -967,7 +972,7 @@ const T = {
     memo:'여행 메모를 여기에 써주세요.',
     folder:'images/mongolia',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#mongolia'
   },
   'Jordan':{
@@ -975,7 +980,7 @@ const T = {
     memo:'여행 메모를 여기에 써주세요.',
     folder:'images/jordan',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#jordan'
   },
   'Palestine':{
@@ -983,7 +988,7 @@ const T = {
     memo:'여행 메모를 여기에 써주세요.',
     folder:'images/palestine',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#palestine'
   },
   'Israel':{
@@ -991,7 +996,7 @@ const T = {
     memo:'여행 메모를 여기에 써주세요.',
     folder:'images/israel',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#israel'
   },
   'Russia':{
@@ -999,7 +1004,7 @@ const T = {
     memo:'여행 메모를 여기에 써주세요.',
     folder:'images/russia',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#russia'
   },
   'Cuba':{
@@ -1007,7 +1012,7 @@ const T = {
     memo:'여행 메모를 여기에 써주세요.',
     folder:'images/cuba',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#cuba'
   },
   'Ecuador':{
@@ -1015,7 +1020,7 @@ const T = {
     memo:'여행 메모를 여기에 써주세요.',
     folder:'images/ecuador',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#ecuador'
   },
   'Aruba':{
@@ -1023,7 +1028,7 @@ const T = {
     memo:'여행 메모를 여기에 써주세요.',
     folder:'images/aruba',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#aruba'
   },
   'Brazil':{
@@ -1031,7 +1036,7 @@ const T = {
     memo:'리우데자네이루의 카니발 시즌. 코르코바도 언덕 예수상 아래 펼쳐진 도시 전경과 이파네마 해변의 석양.',
     folder:'images/brazil',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#brazil'
   },
   'Chile':{
@@ -1039,7 +1044,7 @@ const T = {
     memo:'여행 메모를 여기에 써주세요.',
     folder:'images/chile',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#chile'
   },
   'Argentina':{
@@ -1047,7 +1052,7 @@ const T = {
     memo:'여행 메모를 여기에 써주세요.',
     folder:'images/argentina',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#argentina'
   },
   'Uruguay':{
@@ -1055,7 +1060,7 @@ const T = {
     memo:'여행 메모를 여기에 써주세요.',
     folder:'images/uruguay',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#uruguay'
   },
   'Peru':{
@@ -1063,7 +1068,7 @@ const T = {
     memo:'마추피추와 티티카카호수',
     folder:'images/peru',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#peru'
   },
   'Bolivia':{
@@ -1071,7 +1076,7 @@ const T = {
     memo:'오랜 로망이던 우유니 사막. 아직도 1순위 여행지',
     folder:'images/bolivia',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#bolivia'
   },
   'United States of America':{
@@ -1079,7 +1084,7 @@ const T = {
     memo:'피, 땀, 눈물 박사과정 그리고 외노자 생활',
     folder:'images/usa',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#usa'
   },
   'Canada':{
@@ -1087,7 +1092,7 @@ const T = {
     memo:'가끔 콧구멍에 바람 쐬주러 가던 옆 동네',
     folder:'images/canada',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#canada'
   },
   'Mexico':{
@@ -1095,7 +1100,7 @@ const T = {
     memo:'테킬라, 타코, 그리고 세노테 다이빙',
     folder:'images/mexico',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#mexico'
   },
  'Philippines':{
@@ -1103,7 +1108,7 @@ const T = {
     memo:'세부와 보홀. 첫 가족 여행',
     folder:'images/philippines',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#philippines'
   },
   'Iceland':{
@@ -1111,7 +1116,7 @@ const T = {
     memo:'미국에서 가장 가까운 유럽. 백야가 있고 오로라가 있는 지구가 아닌 행성 같은 곳. 가장 추천하는 나라',
     folder:'images/iceland',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#iceland'
   },
   'Nepal':{
@@ -1119,7 +1124,7 @@ const T = {
     memo:'미국 유학 전, 자아를 찾아서 떠난 여행. 결국 못 찾음',
     folder:'images/nepal',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#nepal'
   },
   'Cambodia':{
@@ -1127,7 +1132,7 @@ const T = {
     memo:'앙코르 와트가 보고 싶었다. 생전 처음 겪은 육로로 국경 넘기',
     folder:'images/cambodia',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#cambodia'
   },
   'Thailand':{
@@ -1135,7 +1140,7 @@ const T = {
     memo:'혼자 떠난 첫 해외 여행. 무서워서 인터넷에서 사람들을 모아서 출발했다',
     folder:'images/thailand',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#thailand'
   },
   'North Korea':{
@@ -1143,7 +1148,7 @@ const T = {
     memo:'금강산 여행이 닫히기 전, 운동권 학생회에서 전교생 대상으로 추첨하여 보내줬다',
     folder:'images/northkorea',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#northkorea'
   },
   'South Korea':{
@@ -1151,7 +1156,7 @@ const T = {
     memo:'여기서 살아남아야 살아돌아오고, 살아돌아올 곳에 갈 수 있다',
     folder:'images/korea',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#korea'
   },
 /*
@@ -1160,7 +1165,7 @@ const T = {
     memo:'런던의 빅벤과 테이트 모던, 에든버러 성의 안개 낀 아침. 역사가 살아 숨쉬는 거리를 걸으며 마신 잉글리시 브렉퍼스트 티.',
     folder:'images/uk',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#uk'
   },
 */
@@ -1170,7 +1175,7 @@ const T = {
     memo:'로마의 콜로세움, 베네치아 곤돌라, 피렌체 두오모. 모든 모퉁이가 예술이었다.',
     folder:'images/italy',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#italy'
   },
 */
@@ -1180,7 +1185,7 @@ const T = {
     memo:'카파도키아의 새벽 열기구. 천 개의 기구가 하늘을 수놓던 그 순간. 이스탄불 블루 모스크와 그랜드 바자르.',
     folder:'images/turkey',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#turkey'
   },
 */
@@ -1190,7 +1195,7 @@ const T = {
     memo:'마라케시 제마 엘프나 광장, 사하라 사막의 별밤. 미로 같은 메디나에서 발견한 민트 티.',
     folder:'images/morocco',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#morocco'
   },
 */
@@ -1200,7 +1205,7 @@ const T = {
     memo:'발리 우붓의 라이스 테라스와 물 위의 사원 탄롯. 인도양으로 떨어지는 황금빛 노을.',
     folder:'images/indonesia',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#indonesia'
   },
 */
@@ -1210,7 +1215,7 @@ const T = {
     memo:'시드니 하버브릿지와 오페라 하우스의 야경, 그레이트 배리어 리프의 투명한 바다.',
     folder:'images/australia',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#australia'
   },
 */
@@ -1220,7 +1225,7 @@ const T = {
     memo:'리스본의 노란 트램, 파두 음악이 흐르는 알파마 골목. 신트라의 동화 같은 궁전들.',
     folder:'images/portugal',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#portugal'
   },
 */
@@ -1230,7 +1235,7 @@ const T = {
     memo:'산토리니의 새하얀 건물과 파란 돔. 아테네 아크로폴리스에서 마주한 2500년의 역사.',
     folder:'images/greece',
     thumbs:['thumb1.jpg','thumb2.jpg','thumb3.jpg','thumb4.jpg'],
-    gallery:['01.jpg', '02.jpg', '03.jpg', '04.jpg', '05.jpg', '06.jpg', '07.jpg', '08.jpg', '09.jpg', '10.jpg', '11.jpg', '12.jpg', '13.jpg', '14.jpg', '15.jpg', '16.jpg', '17.jpg', '18.jpg', '19.jpg', '20.jpg'],
+    gallery: makeGallery(100),
     link:'#greece'
   },
 */
