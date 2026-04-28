@@ -443,10 +443,17 @@ header h1 em{font-style:italic;color:var(--gold);}
 }
 #lightbox.show{opacity:1;pointer-events:all;}
 .lb-bg{position:absolute;inset:0;background:rgba(0,0,0,.92);}
+/* 라이트박스 — 모바일 스와이프 */
 .lb-img-wrap{
   position:relative;z-index:1;
   max-width:92vw;max-height:88vh;
   display:flex;align-items:center;justify-content:center;
+  touch-action:pan-y;
+  user-select:none;
+}
+/* 모바일에서 화살표 버튼 숨김 */
+@media(max-width:700px){
+  .lb-prev,.lb-next{display:none !important;}
 }
 .lb-img-wrap img{
   max-width:100%;max-height:88vh;
@@ -1329,43 +1336,39 @@ function openGallery(key){
 
   const grid=document.getElementById('galleryGrid');
   grid.innerHTML='';
+  document.getElementById('galleryCount').textContent='로딩 중...';
 
-  /* 실제 로드된 이미지만 추적 */
-  let loadedImgs=[];
+  let loadedList=[]; /* 실제 로드 성공한 src 목록 */
 
-  imgs.forEach((file,i)=>{
+  imgs.forEach((file)=>{
     if(!file) return;
-    const item=document.createElement('div');
-    item.className='gallery-item';
-    const img=document.createElement('img');
-    img.src=d.folder+'/'+file;
-    img.alt=d.name+' '+(i+1);
-    img.loading='lazy';
-    /* 로드 성공 시 클릭 이벤트 연결 */
-    img.onload=()=>{
-      loadedImgs.push(d.folder+'/'+file);
-      const idx=loadedImgs.length-1;
-      item.onclick=()=>openLightbox(loadedImgs.slice(), idx);
-      /* 이미 붙어있는 다른 아이템들도 idx 재계산 필요 — lightbox에서 src 기준으로 찾기 */
-      item.dataset.src=d.folder+'/'+file;
+    const src=d.folder+'/'+file;
+    const tester=new Image();
+    tester.onload=()=>{
+      /* 로드 성공 시에만 DOM에 추가 */
+      const item=document.createElement('div');
+      item.className='gallery-item';
+      const img=document.createElement('img');
+      img.src=src;
+      img.alt=d.name;
+      img.loading='lazy';
+      item.appendChild(img);
+      grid.appendChild(item);
+
+      loadedList.push(src);
+      document.getElementById('galleryCount').textContent=loadedList.length+'장';
+
+      /* 클릭 시 현재 로드된 목록 기준으로 라이트박스 */
+      item.onclick=()=>{
+        const allSrcs=[...grid.querySelectorAll('.gallery-item img')].map(im=>im.src);
+        const idx=allSrcs.indexOf(src);
+        openLightbox(allSrcs, idx>=0?idx:0);
+      };
     };
-    /* 로드 실패 시 DOM에서 제거 */
-    img.onerror=()=>{
-      item.remove();
-      document.getElementById('galleryCount').textContent=
-        grid.querySelectorAll('.gallery-item').length+'장';
-    };
-    item.appendChild(img);
-    /* 클릭 시 src 기준으로 현재 로드된 이미지 목록에서 인덱스 찾기 */
-    item.onclick=()=>{
-      const allItems=[...grid.querySelectorAll('.gallery-item img')].map(im=>im.src);
-      const clickedIdx=[...grid.querySelectorAll('.gallery-item img')].indexOf(img);
-      openLightbox(allItems, clickedIdx);
-    };
-    grid.appendChild(item);
+    tester.onerror=()=>{}; /* 실패 시 아무것도 안 함 */
+    tester.src=src;
   });
 
-  document.getElementById('galleryCount').textContent=imgs.length+'장';
   gallery.classList.add('show');
 }
 
@@ -1400,6 +1403,17 @@ document.addEventListener('keydown',e=>{
   if(e.key==='ArrowRight')document.getElementById('lbNext').click();
   if(e.key==='Escape')closeLightbox();
 });
+/* 터치 스와이프 */
+let lbTouchX=0;
+const lbWrap=document.getElementById('lightbox');
+lbWrap.addEventListener('touchstart',e=>{lbTouchX=e.touches[0].clientX;},{passive:true});
+lbWrap.addEventListener('touchend',e=>{
+  const dx=e.changedTouches[0].clientX-lbTouchX;
+  if(Math.abs(dx)<40)return; /* 너무 짧은 스와이프 무시 */
+  if(dx<0){lbIndex=(lbIndex+1)%lbImages.length;}   /* 왼쪽 → 다음 */
+  else{lbIndex=(lbIndex-1+lbImages.length)%lbImages.length;} /* 오른쪽 → 이전 */
+  showLbImage();
+},{passive:true});
 
 
 /* ── POPUP ── */
