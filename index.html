@@ -1338,35 +1338,34 @@ function openGallery(key){
   grid.innerHTML='';
   document.getElementById('galleryCount').textContent='로딩 중...';
 
-  let loadedList=[]; /* 실제 로드 성공한 src 목록 */
+  /* 모든 이미지를 병렬로 로드 테스트 후 성공한 것만 순서대로 렌더링 */
+  const promises=imgs.map((file)=>{
+    return new Promise((resolve)=>{
+      if(!file){resolve(null);return;}
+      const src=d.folder+'/'+file;
+      const tester=new Image();
+      tester.onload=()=>resolve(src);
+      tester.onerror=()=>resolve(null);
+      tester.src=src;
+    });
+  });
 
-  imgs.forEach((file)=>{
-    if(!file) return;
-    const src=d.folder+'/'+file;
-    const tester=new Image();
-    tester.onload=()=>{
-      /* 로드 성공 시에만 DOM에 추가 */
+  Promise.all(promises).then(results=>{
+    const validSrcs=results.filter(src=>src!==null);
+    grid.innerHTML='';
+    document.getElementById('galleryCount').textContent=validSrcs.length+'장';
+
+    validSrcs.forEach((src,i)=>{
       const item=document.createElement('div');
       item.className='gallery-item';
       const img=document.createElement('img');
       img.src=src;
-      img.alt=d.name;
       img.loading='lazy';
       item.appendChild(img);
+      /* 클릭 시 정확한 인덱스로 라이트박스 열기 */
+      item.onclick=()=>openLightbox(validSrcs, i);
       grid.appendChild(item);
-
-      loadedList.push(src);
-      document.getElementById('galleryCount').textContent=loadedList.length+'장';
-
-      /* 클릭 시 현재 로드된 목록 기준으로 라이트박스 */
-      item.onclick=()=>{
-        const allSrcs=[...grid.querySelectorAll('.gallery-item img')].map(im=>im.src);
-        const idx=allSrcs.indexOf(src);
-        openLightbox(allSrcs, idx>=0?idx:0);
-      };
-    };
-    tester.onerror=()=>{}; /* 실패 시 아무것도 안 함 */
-    tester.src=src;
+    });
   });
 
   gallery.classList.add('show');
