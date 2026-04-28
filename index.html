@@ -41,6 +41,12 @@ body{
 }
 #cur{width:7px;height:7px;background:var(--gold);transition:width .15s,height .15s;}
 #cring{width:32px;height:32px;border:1px solid rgba(201,169,110,.45);transition:width .2s,height .2s,opacity .2s;}
+body.no-custom-cursor{cursor:auto;}
+body.no-custom-cursor #cur,
+body.no-custom-cursor #cring{opacity:0;pointer-events:none;}
+
+/* 패널/갤러리/라이트박스 영역은 기본 커서 */
+#panel,#gallery,#lightbox,#popup{cursor:auto;}
 
 /* STARS */
 #stars{position:fixed;inset:0;pointer-events:none;z-index:0;}
@@ -1290,7 +1296,7 @@ function bigCursor(on){
 /* ── SIDE PANEL ── */
 const panel=document.getElementById('panel');
 const ov=document.getElementById('ov');
-function closeP(){panel.classList.remove('open');ov.classList.remove('show');}
+function closeP(){panel.classList.remove('open');ov.classList.remove('show');document.body.classList.remove('no-custom-cursor');}
 document.getElementById('pCl').onclick=closeP;
 ov.onclick=closeP;
 function openP(name){
@@ -1330,6 +1336,7 @@ function openP(name){
   document.getElementById('pBt').onclick=()=>openGallery(name);
 
   panel.classList.add('open');ov.classList.add('show');
+  document.body.classList.add('no-custom-cursor');
 }
 
 /* ── GALLERY ── */
@@ -1376,9 +1383,10 @@ function openGallery(key){
   });
 
   gallery.classList.add('show');
+  document.body.classList.add('no-custom-cursor');
 }
 
-function closeGallery(){gallery.classList.remove('show');}
+function closeGallery(){gallery.classList.remove('show');document.body.classList.remove('no-custom-cursor');}
 document.getElementById('galleryClose').onclick=closeGallery;
 document.getElementById('galleryBg').onclick=closeGallery;
 
@@ -1391,7 +1399,7 @@ function openLightbox(images,index){
   showLbImage();
   lightbox.classList.add('show');
 }
-function closeLightbox(){lightbox.classList.remove('show');}
+function closeLightbox(){lightbox.classList.remove('show');if(!panel.classList.contains('open')&&!gallery.classList.contains('show'))document.body.classList.remove('no-custom-cursor');}
 function showLbImage(){
   document.getElementById('lbImg').src=lbImages[lbIndex];
   document.getElementById('lbCounter').textContent=(lbIndex+1)+' / '+lbImages.length;
